@@ -1,7 +1,4 @@
 
-// enable this rule:
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
