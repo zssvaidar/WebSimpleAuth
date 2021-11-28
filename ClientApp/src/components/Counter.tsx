@@ -36,9 +36,11 @@ import { bindActionCreators } from 'redux';
 //    CounterStore.actionCreators
 //)(Counter);
 
-class CounterPage extends React.Component{
+type AppProps = {}
+type AppState = {}
+class CounterPage extends React.Component<AppProps, AppState>{
 
-    constructor(props: Readonly<{}>) {
+    constructor(props: AppProps) {
         super(props);
 
         this.state = {
@@ -48,7 +50,7 @@ class CounterPage extends React.Component{
         this.handleIncrement = this.handleIncrement.bind(this);
     }
 
-    handleIncrement(e: Readonly<{}>) {
+    handleIncrement(e) {
         const { name, value } = e.target;
         this.setState({ [name]: this.state.count + 1 });
         //const { count } = this.state;
