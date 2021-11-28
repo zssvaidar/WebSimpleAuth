@@ -95,11 +95,11 @@ namespace WebSimpleAuth
             }
 
 
-            //app.UseCors(x => x
-            //   .AllowAnyOrigin()
-            //   .AllowAnyMethod()
-            //   .AllowAnyHeader()
-            //   .AllowCredentials());
+            app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials());
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
