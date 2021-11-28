@@ -40,6 +40,8 @@ namespace WebSimpleAuth
         {
             services.AddControllersWithViews();
             services.AddCors();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase("TestDb"));
 
             // In production, the React files will be served from this directory
