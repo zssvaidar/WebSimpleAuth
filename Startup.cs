@@ -39,6 +39,7 @@ namespace WebSimpleAuth
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddCors();
             services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase("TestDb"));
 
             // In production, the React files will be served from this directory
@@ -95,11 +96,11 @@ namespace WebSimpleAuth
             }
 
 
-            app.UseCors(x => x
-               .AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader()
-               .AllowCredentials());
+            //app.UseCors(x => x
+            //   .AllowAnyOrigin()
+            //   .AllowAnyMethod()
+            //   .AllowAnyHeader()
+            //   .AllowCredentials());
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
