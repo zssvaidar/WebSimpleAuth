@@ -43,7 +43,7 @@
     "typescript": "3.6.4"
   },
   "scripts": {
-    "postinstall": "npm install --prefix ./ClientApp/node_modules",
+    "postinstall": "npm install --prefix ./ ClientApp/node_modules"
   },
   "eslintConfig": {
     "extends": "react-app"
