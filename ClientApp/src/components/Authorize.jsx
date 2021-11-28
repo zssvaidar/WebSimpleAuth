@@ -8,9 +8,11 @@ import { withRouter } from 'react-router'
 //import './UnloggedForm.css';
 
 
-class LoginPage extends React.Component {
-    constructor(props: Readonly<{}>) {
-        super(props);
+type AppProps = {}
+type AppState = {}
+class LoginPage extends React.Component<AppProps, AppState> {
+    constructor(props) {                
+        super(props: AppProps);
          
         // reset login status
         this.props.logout();
