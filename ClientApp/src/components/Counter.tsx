@@ -36,7 +36,7 @@ import { bindActionCreators } from 'redux';
 //    CounterStore.actionCreators
 //)(Counter);
 
-class CounterPage extends React.Component<any, any>{
+class CounterPage extends React.Component<any>{
 
     constructor(props: any) {
         super(props);

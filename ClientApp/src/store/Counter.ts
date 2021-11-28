@@ -3,7 +3,11 @@ import { Action, Reducer } from 'redux';
 
 //let count = JSON.parse(localStorage.getItem('count'));
 let count = 0;
-const CounterState = {
+export interface CounterState {
+    count: number
+}
+
+const CounterState1 = {
     count: count ? count : 0
 }
 
@@ -19,7 +23,7 @@ export const actionCreators = {
 };
 
 
-export const reducer = (state = CounterState, action: any) => {
+export const reducer = (state = CounterState1, action: any) => {
    
 
     switch (action.type) {

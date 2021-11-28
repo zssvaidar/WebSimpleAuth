@@ -8,7 +8,7 @@ import { withRouter } from 'react-router'
 //import './UnloggedForm.css';
 
 
-class LoginPage extends React.Component<any, any> {
+class LoginPage extends React.Component<any> {
     constructor(props: any) {
         super(props);
          

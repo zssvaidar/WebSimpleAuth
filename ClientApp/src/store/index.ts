@@ -1,10 +1,9 @@
-/*
 import * as WeatherForecasts from './WeatherForecasts';
 import * as Counter from './Counter';
 
 // The top-level state object
 export interface ApplicationState {
-    counter: Counter.CounterState | undefined;
+    counter: Counter.CounterState;
     weatherForecasts: WeatherForecasts.WeatherForecastsState | undefined;
 }
 
@@ -21,4 +20,3 @@ export const reducers = {
 export interface AppThunkAction<TAction> {
     (dispatch: (action: TAction) => void, getState: () => ApplicationState): void;
 }
-*/
