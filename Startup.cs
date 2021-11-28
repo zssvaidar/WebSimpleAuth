@@ -39,6 +39,7 @@ namespace WebSimpleAuth
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase("TestDb"));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
