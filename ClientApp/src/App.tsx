@@ -29,7 +29,7 @@ class App extends React.Component {
     }
 }
 
-function mapStateToProps(state: { alert }) {
+function mapStateToProps(state: { alert: {}}) {
     const { alert } = state;
     return {
         alert
