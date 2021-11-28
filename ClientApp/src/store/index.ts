@@ -1,3 +1,4 @@
+/*
 import * as WeatherForecasts from './WeatherForecasts';
 import * as Counter from './Counter';
 
@@ -20,3 +21,4 @@ export const reducers = {
 export interface AppThunkAction<TAction> {
     (dispatch: (action: TAction) => void, getState: () => ApplicationState): void;
 }
+*/

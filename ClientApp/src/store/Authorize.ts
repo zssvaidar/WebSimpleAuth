@@ -3,7 +3,7 @@
 let user = JSON.parse(localStorage.getItem('user'));
 const initialState = user ? { loggedIn: true, user } : {};
 
-export const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action: any) => {
     switch (action.type) {
         case userConstants.LOGIN_REQUEST:
             return {

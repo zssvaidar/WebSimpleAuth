@@ -19,7 +19,7 @@ export const actionCreators = {
 };
 
 
-export const reducer = (state = CounterState, action) => {
+export const reducer = (state = CounterState, action: any) => {
    
 
     switch (action.type) {
