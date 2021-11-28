@@ -15,9 +15,12 @@ import { Register } from './components/Register';
 
 class App extends React.Component {
     render() {
-        /*// const alert = this.props.alert;*/
+        const alert = this.props.alert;
         return (
             <div>
+                {this.props.alert.message &&
+                    <div className={'alert ' + alert.type}>{alert.message}</div>
+                }
                 <Layout>
                     {/*<Route exact path='/' component={Home} />*/}
                     {/*<Route path='/counter' component={Counter} />*/}
