@@ -9,7 +9,7 @@ import { withRouter } from 'react-router'
 
 
 class LoginPage extends React.Component {
-    constructor(props: any) {
+    constructor(props: Readonly<{}>) {
         super(props);
          
         // reset login status

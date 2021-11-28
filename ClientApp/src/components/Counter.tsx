@@ -38,7 +38,7 @@ import { bindActionCreators } from 'redux';
 
 class CounterPage extends React.Component{
 
-    constructor(props: any) {
+    constructor(props: Readonly<{}>) {
         super(props);
 
         this.state = {
@@ -48,7 +48,7 @@ class CounterPage extends React.Component{
         this.handleIncrement = this.handleIncrement.bind(this);
     }
 
-    handleIncrement(e : any) {
+    handleIncrement(e: Readonly<{}>) {
         const { name, value } = e.target;
         this.setState({ [name]: this.state.count + 1 });
         //const { count } = this.state;
