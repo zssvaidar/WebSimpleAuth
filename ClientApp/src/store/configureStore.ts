@@ -32,7 +32,7 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import * as Authentication from './Authorize';
-//import * as Registration from './Registration';
+import * as Registration from './Registration';
 import * as Alert from './Alert';
 
 import { History } from 'history';
@@ -44,7 +44,7 @@ import * as Counter from './Counter';
 export default function configureStore(history: History, initialState?: ApplicationState) {//(history, initialState) {
     const reducers = {
         authentication: Authentication.reducer,
-        //registration: Registration.reducer,
+        registration: Registration.reducer,
         alert: Alert.reducer,
 
 

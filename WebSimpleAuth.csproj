@@ -21,10 +21,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="tsconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\src\components\Authorize.jsx" />
     <None Remove="ClientApp\src\constants\index.ts" />
     <None Remove="ClientApp\src\constants\user.constants.ts" />
     <None Remove="ClientApp\src\store\Authorize.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="tsconfig.json" />
   </ItemGroup>
 
   <ItemGroup>

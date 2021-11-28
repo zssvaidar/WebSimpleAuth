@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import './custom.css'
+import { Register } from './components/Register';
 
 
 class App extends React.Component {
@@ -18,10 +19,11 @@ class App extends React.Component {
         return (
             <div>
                 <Layout>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/counter' component={Counter} />
-                    <Route path='/fetch-data/:startDateIndex?' component={FetchData} />
+                    {/*<Route exact path='/' component={Home} />*/}
+                    {/*<Route path='/counter' component={Counter} />*/}
+                    {/*<Route path='/fetch-data/:startDateIndex?' component={FetchData} />*/}
                     <Route path='/authorize' component={Login} />
+                    <Route path='/register' component={Register} />
                 </Layout>
             </div>
 
