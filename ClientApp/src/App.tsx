@@ -14,7 +14,7 @@ import './custom.css'
 
 class App extends React.Component {
     render() {
-        const alert = this.props.alert;
+        /*// const alert = this.props.alert;*/
         return (
             <div>
                 <Layout>
