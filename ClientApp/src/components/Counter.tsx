@@ -4,32 +4,97 @@ import { RouteComponentProps } from 'react-router';
 import { ApplicationState } from '../store';
 import * as CounterStore from '../store/Counter';
 
-type CounterProps =
-    CounterStore.CounterState &
-    typeof CounterStore.actionCreators &
-    RouteComponentProps<{}>;
+import { withRouter } from 'react-router'
+import { bindActionCreators } from 'redux';
+//type CounterProps =
+//    CounterStore.CounterState &
+//    typeof CounterStore.actionCreators &
+//    RouteComponentProps<{}>;
 
-class Counter extends React.PureComponent<CounterProps> {
+//class Counter extends React.PureComponent<CounterProps> {
+//    public render() {
+//        return (
+//            <React.Fragment>
+//                <h1>Counter</h1>
+
+//                <p>This is a simple example of a React component.</p>
+
+//                <p aria-live="polite">Current count: <strong>{this.props.count}</strong></p>
+
+//                <button type="button"
+//                    className="btn btn-primary btn-lg"
+//                    onClick={() => { this.props.increment(); }}>
+//                    Increment
+//                </button>
+//            </React.Fragment>
+//        );
+//    }
+//};
+
+//export default connect(
+//    (state: ApplicationState) => state.counter,
+//    CounterStore.actionCreators
+//)(Counter);
+
+class CounterPage extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            count: 0,
+        };
+
+        this.handleIncrement = this.handleIncrement.bind(this);
+    }
+
+    handleIncrement(e) {
+        const { name, value } = e.target;
+        this.setState({ [name]: this.state.count + 1 });
+        //const { count } = this.state;
+        //this.setState({
+            //[count]+=1
+        //});
+        
+    }
+
     public render() {
+        const { count } = this.state;
         return (
             <React.Fragment>
                 <h1>Counter</h1>
 
                 <p>This is a simple example of a React component.</p>
 
-                <p aria-live="polite">Current count: <strong>{this.props.count}</strong></p>
+                <p aria-live="polite">Current count: <strong>{count}</strong></p>
 
-                <button type="button"
+                <input type="button"
                     className="btn btn-primary btn-lg"
-                    onClick={() => { this.props.increment(); }}>
+                    name="count"
+                    value="Increment"
+                    onClick={ this.handleIncrement }/>
                     Increment
-                </button>
+             
             </React.Fragment>
         );
     }
 };
 
-export default connect(
-    (state: ApplicationState) => state.counter,
-    CounterStore.actionCreators
-)(Counter);
+
+
+function mapStateToProps(state) {
+    const { count } = state;
+    return {
+        count
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {    
+        increment: bindActionCreators(CounterStore.actionCreators.increment, dispatch),
+        decrement: bindActionCreators(CounterStore.actionCreators.decrement, dispatch)
+    }
+}
+
+const connectedLoginPage = withRouter(connect(mapStateToProps, mapDispatchToProps)(CounterPage));
+export { connectedLoginPage as Counter };

@@ -31,15 +31,26 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
-import * as Authentication from './Authentication';
-import * as Registration from './Registration';
+import * as Authentication from './Authorize';
+//import * as Registration from './Registration';
 import * as Alert from './Alert';
 
-export default function configureStore(history, initialState) {
+import { History } from 'history';
+import { ApplicationState, reducers } from './';
+
+import * as WeatherForecasts from './WeatherForecasts';
+import * as Counter from './Counter';
+
+export default function configureStore(history: History, initialState?: ApplicationState) {//(history, initialState) {
     const reducers = {
         authentication: Authentication.reducer,
-        registration: Registration.reducer,
-        alert: Alert.reducer
+        //registration: Registration.reducer,
+        alert: Alert.reducer,
+
+
+        counter: Counter.reducer ,
+        weatherForecasts: WeatherForecasts.reducer 
+
     };
 
     const middleware = [

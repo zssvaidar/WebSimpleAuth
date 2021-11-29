@@ -16,6 +16,8 @@ namespace WebSimpleAuth.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            System.Diagnostics.Debug.WriteLine("nice");
+            Console.Write("my aop");
             return new string[] { "value1", "value2" };
         }
 
